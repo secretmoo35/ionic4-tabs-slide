@@ -1,0 +1,10 @@
+<div class="ion4-tabs-slide">
+  <ion-segment #segments mode="md" [(ngModel)]="page" color="tertiary">
+    <ion-segment-button class="segment-button" *ngFor="let item of items; let i =index;" [value]="i" (click)="selectedTab(i)">
+      {{ item?.name }}
+    </ion-segment-button>
+  </ion-segment>
+  <ion-slides #slider (ionSlideDidChange)="slideChanged()">
+    <ng-content></ng-content>
+  </ion-slides>
+</div>
